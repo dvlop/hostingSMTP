@@ -59,10 +59,10 @@ try {
 ```
 
 # Minus hostingu w nazwa.pl
-#### Brak certyfikatów tls/ssl dla serwera mysql/mariadb.
-#### Dodatkowo dostęp z poza hostingu do serwera mysql/mariadb jest możliwy bez tls/ssl 
+#### Brak bezpiecznego połączenia tls/ssl dla serwera mysql/mariadb.
+#### Dodatkowo dostęp z poza hostingu do serwera mysql/mariadb jest możliwy bez tls/ssl. 
 #### Gdzie tu RODO i inne przepisy bezpieczeństwa.
-#### Pan na pomocy poleca zakupić serwer VPS po tym jak się zakupiło hosting i nie wpadło na to że w czasach darmowych certyfikatów tls nie mają zainstalowanego certyfikatu dla servera mysql/mariadb.
+#### Pomocy poleca zakupić serwer VPS po tym jak się zakupiło hosting i nie wpadło na to że w czasach darmowych certyfikatów tls nie mają uruchomionego certyfikatu dla servera mysql/mariadb.
 
 ```php
 <?php
