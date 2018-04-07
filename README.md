@@ -57,3 +57,77 @@ try {
 }
 ?>
 ```
+
+# Minus hostingu w nazwa.pl
+#### Brak certyfikatów tls/ssl dla serwera mysql/mariadb.
+#### Dodatkowo dostęp z poza hostingu do serwera mysql/mariadb jest możliwy bez tls/ssl 
+#### Gdzie tu RODO i inne przepisy bezpieczeństwa.
+#### Pan na pomocy poleca zakupić serwer VPS po tym jak się zakupiło hosting i nie wpadło na to że w czasach darmowych certyfikatów tls nie mają zainstalowanego certyfikatu dla servera mysql/mariadb.
+
+```php
+<?php
+// session_start();
+// error_reporting(0);
+// echo __DIR__;
+// SHOW VARIABLES LIKE '%ssl%'
+// GRANT ALL PRIVILEGES ON *.* TO 'ssluser'@'localhost' IDENTIFIED BY 'ssluser' REQUIRE SSL;
+
+try{
+$pdo = new PDO('mysql:host=sql.twojanazwa.nazwa.pl;dbname=Dbname', 'Username', 'Password', array(
+PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
+//PDO::MYSQL_ATTR_SSL_KEY => '/home/folder/ftp/priv.key',
+//PDO::MYSQL_ATTR_SSL_CERT => '/home/folder/ftp/crt.crt',
+//PDO::MYSQL_ATTR_SSL_CA => '/home/folder/ftp/ca.crt',
+PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false
+    )
+);
+
+echo "<pre>";
+
+// $pdo = new PDO('mysql:host=sql.nazwa.nazwa.pl;dbname=Dbname', 'Username', 'Password');
+$statement = $pdo->query("SELECT * FROM demo");
+$statement = $pdo->query("SHOW VARIABLES LIKE '%ssl%'");
+$row = $statement->fetch(PDO::FETCH_ASSOC);
+print_r($row);
+
+$statement = $pdo->query("SHOW SESSION STATUS LIKE 'Ssl_version';");
+$row = $statement->fetch(PDO::FETCH_ASSOC);
+print_r($row);
+
+$statement = $pdo->query("SHOW SESSION STATUS LIKE 'Ssl_cipher';");
+$row = $statement->fetch(PDO::FETCH_ASSOC);
+print_r($row);
+
+$statement = $pdo->query("show global variables like 'have_ssl';");
+$row = $statement->fetch(PDO::FETCH_ASSOC);
+print_r($row);
+
+$statement = $pdo->query("SHOW status LIKE '%ssl%'");
+$row = $statement->fetch(PDO::FETCH_ASSOC);
+print_r($row);
+
+echo "Jak się połączyć za pomocą bezpiecznego połączenia ssl/tls ??? <br>" . htmlentities($row['id']);
+// print_r($row);
+}catch(\PDOException $e){
+   echo $e->getMessage();
+   echo $e->getCode();
+   die('Failed connecting');
+}
+
+echo '+---------------------+----------------------------+
+| Variable_name       | Value                      |
++---------------------+----------------------------+
+| have_openssl        | YES                        |
+| have_ssl            | DISABLED                   |
+| ssl_ca              |                            |
+| ssl_capath          |                            |
+| ssl_cert            |                            |
+| ssl_cipher          |                            |
+| ssl_crl             |                            |
+| ssl_crlpath         |                            |
+| ssl_key             |                            |
+| version_ssl_library | OpenSSL 1.0.2g  1 Mar 2016 |
++---------------------+----------------------------+';
+?>
+```
