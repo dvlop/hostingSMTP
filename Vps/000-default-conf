@@ -1,0 +1,175 @@
+<VirtualHost *:80>
+    ServerName breakermind.com
+    ServerAlias breakermind.com
+    ServerAdmin hello@breakermind.com
+    DocumentRoot /var/www/html/breakermind.com
+    ErrorLog /var/www/logs/virtual.host.breakermind.com.error.log
+    CustomLog /var/www/logs/virtual.host.breakermind.com.access.log combined
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName breakermind.com
+    ServerAlias freshi.breakermind.com
+    ServerAdmin hello@breakermind.com
+    DocumentRoot /var/www/html/freshi.breakermind.com
+    ErrorLog /var/www/logs/virtual.host.freshi.breakermind.com.error.log
+    CustomLog /var/www/logs/virtual.host.freshi.breakermind.com.access.log combined
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName breakermind.com
+    ServerAlias sms.breakermind.com
+    ServerAdmin hello@breakermind.com
+    DocumentRoot /var/www/html/sms.breakermind.com
+    ErrorLog /var/www/logs/virtual.host.sms.breakermind.com.error.log
+    CustomLog /var/www/logs/virtual.host.sms.breakermind.com.access.log combined
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName breakermind.com
+    ServerAlias smtpserver.breakermind.com
+    ServerAdmin hello@breakermind.com
+    DocumentRoot /var/www/html/smtpserver.breakermind.com
+    ErrorLog /var/www/logs/virtual.host.smtpserver.breakermind.com.error.log
+    CustomLog /var/www/logs/virtual.host.smtpserver.breakermind.com.access.log combined
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName breakermind.com
+    ServerAlias fabrykaurody.breakermind.com
+    ServerAdmin hello@breakermind.com
+    DocumentRoot /var/www/html/fabrykaurody.breakermind.com
+    ErrorLog /var/www/logs/virtual.host.fabryka.breakermind.com.error.log
+    CustomLog /var/www/logs/virtual.host.fabryka.breakermind.com.access.log combined
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName breakermind.com
+    ServerAlias fresho.breakermind.com
+    ServerAdmin hello@breakermind.com
+    DocumentRoot /var/www/html/fresho.breakermind.com
+    ErrorLog /var/www/logs/virtual.host.fresho.breakermind.com.error.log
+    CustomLog /var/www/logs/virtual.host.fresho.breakermind.com.access.log combined
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName breakermind.com 
+    ServerAlias kupfure.pl
+    ServerAdmin hello@breakermind.com
+    DocumentRoot /var/www/html/kupfure.pl
+    ErrorLog /var/www/logs/virtual.host.kupfure.pl.error.log
+    CustomLog /var/www/logs/virtual.host.kupfure.pl.access.log combined
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName breakermind.com
+    ServerAlias *.breakermind.com
+    ServerAdmin hello@breakermind.com
+    DocumentRoot /var/www/html/default
+    ErrorLog /var/www/logs/virtual.host.default.error.log
+    CustomLog /var/www/logs/virtual.host.default.access.log combined
+    <Directory /var/www/html/default>        
+        Deny from all        
+    </Directory>
+</VirtualHost>
+
+<VirtualHost *:443>
+    ## Web host
+    ServerName breakermind.com
+    ServerAlias breakermind.com
+    ServerAdmin admin@localhost
+    DocumentRoot "/var/www/html/breakermind.com"    
+    ErrorLog "/var/www/logs/breakermind.com.log"
+    CustomLog "/var/www/logs/breakermind.com.log" common
+    SSLEngine On
+    SSLCertificateFile "/var/www/ssl/breakermind.com/certificate.crt"
+    SSLCertificateKeyFile "/var/www/ssl/breakermind.com/private.key"
+    SSLCertificateChainFile "/var/www/ssl/breakermind.com/ca_bundle.crt
+</VirtualHost>
+
+<VirtualHost *:443>
+    ## Web host
+    ServerName breakermind.com
+    ServerAlias fresho.breakermind.com
+    ServerAdmin admin@localhost
+    DocumentRoot "/var/www/html/fresho.breakermind.com"    
+    ErrorLog "/var/www/logs/fresho.breakermind.com.log"
+    CustomLog "/var/www/logs/fresho.breakermind.com.log" common
+    SSLEngine On
+    SSLCertificateFile "/var/www/ssl/breakermind.com/certificate.crt"
+    SSLCertificateKeyFile "/var/www/ssl/breakermind.com/private.key"
+    SSLCertificateChainFile "/var/www/ssl/breakermind.com/ca_bundle.crt
+</VirtualHost>
+
+<VirtualHost *:443>
+    ## Web host
+    ServerName breakermind.com
+    ServerAlias freshi.breakermind.com
+    ServerAdmin admin@localhost
+    DocumentRoot "/var/www/html/freshi.breakermind.com"    
+    ErrorLog "/var/www/logs/freshi.breakermind.com.log"
+    CustomLog "/var/www/logs/freshi.breakermind.com.log" common
+    SSLEngine On
+    SSLCertificateFile "/var/www/ssl/breakermind.com/certificate.crt"
+    SSLCertificateKeyFile "/var/www/ssl/breakermind.com/private.key"
+    SSLCertificateChainFile "/var/www/ssl/breakermind.com/ca_bundle.crt
+</VirtualHost>
+
+<VirtualHost *:443>
+    ## Web host
+    ServerName breakermind.com
+    ServerAlias sms.breakermind.com
+    ServerAdmin admin@localhost
+    DocumentRoot "/var/www/html/sms.breakermind.com"    
+    ErrorLog "/var/www/logs/sms.breakermind.com.log"
+    CustomLog "/var/www/logs/sms.breakermind.com.log" common
+    SSLEngine On
+    SSLCertificateFile "/var/www/ssl/breakermind.com/certificate.crt"
+    SSLCertificateKeyFile "/var/www/ssl/breakermind.com/private.key"
+    SSLCertificateChainFile "/var/www/ssl/breakermind.com/ca_bundle.crt
+</VirtualHost>
+
+<VirtualHost *:443>
+    ## Web host
+    ServerName breakermind.com
+    ServerAlias fabrykaurody.breakermind.com
+    ServerAdmin admin@localhost
+    DocumentRoot "/var/www/html/fabrykaurody.breakermind.com"    
+    ErrorLog "/var/www/logs/fabrykaurody.breakermind.com.log"
+    CustomLog "/var/www/logs/fabrykaurody.breakermind.com.log" common
+    SSLEngine On
+    SSLCertificateFile "/var/www/ssl/breakermind.com/certificate.crt"
+    SSLCertificateKeyFile "/var/www/ssl/breakermind.com/private.key"
+    SSLCertificateChainFile "/var/www/ssl/breakermind.com/ca_bundle.crt
+</VirtualHost>
+
+<VirtualHost *:443>
+    ## Web host
+    ServerName breakermind.com
+    ServerAlias *.breakermind.com
+    ServerAdmin admin@localhost
+    DocumentRoot "/var/www/html/default"    
+    ErrorLog "/var/www/logs/default.com.log"
+    CustomLog "/var/www/logs/default.com.log" common
+    SSLEngine On
+    SSLCertificateFile "/var/www/ssl/breakermind.com/certificate.crt"
+    SSLCertificateKeyFile "/var/www/ssl/breakermind.com/private.key"
+    SSLCertificateChainFile "/var/www/ssl/breakermind.com/ca_bundle.crt
+    <Directory /var/www/html/default>        
+        Deny from all        
+    </Directory>
+</VirtualHost>
+
+<VirtualHost *:443>
+    ## Web host
+    ServerName breakermind.com
+    ServerAlias kupfure.pl
+    ServerAdmin admin@localhost
+    DocumentRoot "/var/www/html/kupfure.pl"    
+    ErrorLog "/var/www/logs/kupfure.pl.log"
+    CustomLog "/var/www/logs/kupfure.pl.log" common
+    SSLEngine On
+    SSLCertificateFile "/var/www/ssl/kupfure.pl/certificate.crt"
+    SSLCertificateKeyFile "/var/www/ssl/kupfure.pl/private.key"
+    SSLCertificateChainFile "/var/www/ssl/kupfure.pl/ca_bundle.crt
+</VirtualHost>
