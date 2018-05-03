@@ -36,3 +36,9 @@ apt-get install xfce4
 # RDP - zdalny pulpit
 apt-get install xrdp
 echo "xfce4-session" > ~/.xsession
+# Install XFCE4 terminal (way better than xterm)
+apt-get install xfce4-terminal
+# Install icon sets
+apt-get install gnome-icon-theme-full tango-icon-theme
+# And or reboot
+startxfce4
