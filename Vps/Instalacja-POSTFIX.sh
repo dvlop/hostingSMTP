@@ -2,7 +2,10 @@
 # Lub na bazach danych z https://linode.com/docs/email/postfix/email-with-postfix-dovecot-and-mysql/
 apt-get install postfix mailutils
 
-# Uruchomić
+# Wysyłanie e-mail z konsoli
+echo "Treść wiadomości" | mail -s "Temat wiadomości" email@odbiorcy.xx
+
+# Uruchomić i przekonfigurować
 dpkg-reconfigure postfix
 
 # Lub konfiguracja w pliku nano /etc/main.cf jak poniżej:
