@@ -1,4 +1,5 @@
-# install 
+# Instalacja do wysyłania
+# Lub na bazach danych z https://linode.com/docs/email/postfix/email-with-postfix-dovecot-and-mysql/
 apt-get install postfix mailutils
 
 # Uruchomić
