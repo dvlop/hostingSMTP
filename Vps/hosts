@@ -1,4 +1,5 @@
-127.0.0.1 zix.domena.pl zix
+# First must set myorigin hostname !!!
+127.0.0.1 kupfure.pl zix.kupfure.pl zix
 127.0.0.1 localhost
 
 # The following lines are desirable for IPv6 capable hosts
